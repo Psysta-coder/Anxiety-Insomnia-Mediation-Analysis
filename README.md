@@ -31,7 +31,15 @@ This repository contains a Python Jupyter notebook that performs a mediation ana
 1. Clone this repository:
 ```bash
 git clone https://github.com/Psysta-coder/Anxiety-Insomnia-Mediation-Analysis.git
+    Install the required libraries:
+
+bash
+
 pip install pandas numpy statsmodels scipy pingouin matplotlib openpyxl
+    Open the notebook and run all cells:
+
+bash
+
 jupyter notebook mediation_analysis_anxiety_insomnia.ipynb
 Results Summary
 Path	Coefficient	p-value
@@ -41,9 +49,8 @@ Total effect (c)	0.187	< 0.001
 Direct effect (c')	0.205	< 0.001
 Indirect effect (Sobel)	-0.017	0.079
 Indirect effect (Bootstrap CI)	-0.017	[-0.042, 0.002]
-Notes
+📝 Notes
 
     Data is anonymized.
 
     All analyses are reproducible.
-
