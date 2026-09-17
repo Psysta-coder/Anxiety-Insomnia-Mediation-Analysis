@@ -38,34 +38,23 @@ This repository contains a Python Jupyter notebook that performs a mediation ana
 1. Clone this repository:
 ```bash
 git clone https://github.com/Psysta-coder/Anxiety-Insomnia-Mediation-Analysis.git
-
-bash
-
 pip install pandas numpy statsmodels scipy openpyxl jupyter
-
-bash
-
 jupyter notebook khab.ipynb
-
-Results Summary
-Path                                          | Coefficient | p-value
-----------------------------------------------|-------------|---------
-a (Anxiety → Rumination)                      | 0.266       | < 0.001
-b (Rumination → Insomnia | Anxiety)           | 0.104       | 0.052
-c (Total: Anxiety → Insomnia)                 | 0.424       | < 0.001
-c' (Direct: Anxiety → Insomnia | Rumination)  | 0.396       | < 0.001
-Indirect effect (a × b)                       | 0.028       | Sobel p = 0.086
-Bootstrap 95% CI for indirect                 | [-0.001, 0.064] | Not significant
+📈 Results Summary
+Path	Coefficient	p-value
+a (Anxiety → Rumination)	0.266	< 0.001
+b (Rumination → Insomnia | Anxiety)	0.104	0.052
+c (Total: Anxiety → Insomnia)	0.424	< 0.001
+c' (Direct: Anxiety → Insomnia | Rumination)	0.396	< 0.001
+Indirect effect (a × b)	0.028	Sobel p = 0.086
+Bootstrap 95% CI for indirect	[-0.001, 0.064]	Not significant
 
 📝 Notes
 
-Data is anonymized. Raw survey responses are not shared to protect participant privacy.
+    Data is anonymized. Raw survey responses are not shared to protect participant privacy.
 
-Cronbach's alpha: ISI = 0.66, GAD-7 = 0.88, Rumination = 0.71.
+    Cronbach's alpha: ISI = 0.66, GAD-7 = 0.88, Rumination = 0.71.
 
-The ISI reliability is slightly below the conventional 0.70 threshold — this is acknowledged as a limitation.
+    The ISI reliability is slightly below the conventional 0.70 threshold — this is acknowledged as a limitation.
 
-All analyses are reproducible using the provided notebook.
-
-
-
+    All analyses are reproducible using the provided notebook.
