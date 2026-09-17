@@ -5,24 +5,31 @@ This repository contains a Python Jupyter notebook that performs a mediation ana
 ---
 
 ## 📊 Key Findings
-- Anxiety has a **significant direct effect** on insomnia (β = 0.187, p < 0.001).
-- Rumination **does NOT significantly mediate** this relationship:
-  - Indirect effect = -0.017
-  - 95% Bootstrap CI = [-0.042, 0.002]
-- The direct effect remains significant after controlling for rumination (β = 0.205, p < 0.001).
 
-> ⚠️ The mediation hypothesis is **rejected**. Rumination is not a significant mediator.
+- **Anxiety has a significant direct effect on insomnia** (β = 0.396, p < 0.001).
+- **Rumination does NOT significantly mediate** this relationship:
+  - Indirect effect = 0.028
+  - 95% Bootstrap CI = [-0.001, 0.064] → contains zero
+  - Sobel test: Z = 1.72, p = 0.086
+- The direct effect remains strong after controlling for rumination (β = 0.396, p < 0.001).
+
+> ⚠️ **The mediation hypothesis is rejected.** Rumination is not a significant mediator between anxiety and insomnia.
 
 ---
 
 ## 📁 Files
-- `mediation_analysis_anxiety_insomnia.ipynb` – Jupyter notebook with all analyses (data cleaning, coding, regression, Sobel test, bootstrapping, tables)
+
+- `khab.ipynb` – Jupyter notebook with the full analysis (data cleaning, scoring, descriptive statistics, Pearson correlations, mediation analysis with Baron & Kenny + Sobel test + Bootstrap)
 
 ---
 
 ## 🛠️ Tools Used
+
 - Python 3
-- pandas, numpy, statsmodels, scipy, pingouin, matplotlib
+- pandas, numpy – data manipulation
+- statsmodels – OLS regression
+- scipy – correlations & Sobel test
+- Jupyter Notebook
 
 ---
 
@@ -31,26 +38,34 @@ This repository contains a Python Jupyter notebook that performs a mediation ana
 1. Clone this repository:
 ```bash
 git clone https://github.com/Psysta-coder/Anxiety-Insomnia-Mediation-Analysis.git
-    Install the required libraries:
 
 bash
 
-pip install pandas numpy statsmodels scipy pingouin matplotlib openpyxl
-    Open the notebook and run all cells:
+pip install pandas numpy statsmodels scipy openpyxl jupyter
 
 bash
 
-jupyter notebook mediation_analysis_anxiety_insomnia.ipynb
+jupyter notebook khab.ipynb
+
 Results Summary
-Path	Coefficient	p-value
-Anxiety → Rumination (a)	0.176	< 0.001
-Rumination → Insomnia (b)	-0.097	0.042
-Total effect (c)	0.187	< 0.001
-Direct effect (c')	0.205	< 0.001
-Indirect effect (Sobel)	-0.017	0.079
-Indirect effect (Bootstrap CI)	-0.017	[-0.042, 0.002]
+Path                                          | Coefficient | p-value
+----------------------------------------------|-------------|---------
+a (Anxiety → Rumination)                      | 0.266       | < 0.001
+b (Rumination → Insomnia | Anxiety)           | 0.104       | 0.052
+c (Total: Anxiety → Insomnia)                 | 0.424       | < 0.001
+c' (Direct: Anxiety → Insomnia | Rumination)  | 0.396       | < 0.001
+Indirect effect (a × b)                       | 0.028       | Sobel p = 0.086
+Bootstrap 95% CI for indirect                 | [-0.001, 0.064] | Not significant
+
 📝 Notes
 
-    Data is anonymized.
+Data is anonymized. Raw survey responses are not shared to protect participant privacy.
 
-    All analyses are reproducible.
+Cronbach's alpha: ISI = 0.66, GAD-7 = 0.88, Rumination = 0.71.
+
+The ISI reliability is slightly below the conventional 0.70 threshold — this is acknowledged as a limitation.
+
+All analyses are reproducible using the provided notebook.
+
+
+
